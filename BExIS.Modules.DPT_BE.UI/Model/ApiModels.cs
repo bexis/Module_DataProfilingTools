@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BExIS.IO.Transform.Output;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,25 +25,52 @@ namespace BExIS.Modules.DPT_BE.UI.Models
     /// <returns></returns>
     public class DataStructureObject
     {
-        public string Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string inUse { get; set; }
-        public string Structured { get; set; }
-        public List<Variables> Variables { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
+        public string desciption { get; set; }
+        public bool inUse { get; set; }
+        public List<Variable> variables { get; set; }
     }
 
-    public class Variables
+    public class Constraint
     {
-        public string Id { get; set; }
-        public string Label { get; set; }
-        public string Description { get; set; }
-        public string isOptional { get; set; }
-        public string Unit { get; set; }
-        public string DataType { get; set; }
-        public string SystemType { get; set; }
-        public string AttributeName { get; set; }
-        public string AttributeDescription { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public string description { get; set; }
+    }
+
+    public class Unit
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string abbrevation { get; set; }
+        public string description { get; set; }
+        public Dimension dimension { get; set; }
+        public string measurementSystem { get; set; }
+    }
+
+    public class Dimension
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+        public string specification { get; set; }
+    }
+
+    public class Variable
+    {
+        public int id { get; set; }
+        public string label { get; set; }
+        public string description { get; set; }
+        public bool isOptional { get; set; }
+        public string dataType { get; set; }
+        public string systemType { get; set; }
+        public string displayPattern { get; set; }
+        public Unit unit { get; set; }
+        public List<object> missingValues { get; set; }
+        public Template template { get; set; }
+        public List<object> meanings { get; set; }
+        public List<Constraint> constraints { get; set; }
     }
 
     /// <summary>
@@ -52,31 +80,28 @@ namespace BExIS.Modules.DPT_BE.UI.Models
     /// <returns></returns>
     public class DatasetObject
     {
-        public string Id { get; set; }
-        public string Version { get; set; }
-        public string VersionId { get; set; }
+        public long Id { get; set; }
+        public long Version { get; set; }
+        public long VersionId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string DataStructureId { get; set; }
-        public string MetadataStructureId { get; set; }
-        public AdditionalInformations AdditionalInformations { get; set; }
+        public long DataStructureId { get; set; }
+        public long MetadataStructureId { get; set; }
+        public bool IsPublic { get; set; }
+        public string PublicationDate { get; set; }
+        public string VersionName { get; set; }
+        public bool VersionPublicAccess { get; set; }
+        public string VersionPublicAccessDate { get; set; }
+        public Dictionary<string, string> AdditionalInformations { get; set; }
+        public Dictionary<string, Dictionary<string, string>> Parties { get; set; }
+        public string VersionDate { get; set; }
+        public object Names { get; internal set; }
+
         public DatasetObject()
         {
-            AdditionalInformations = new AdditionalInformations();
+            AdditionalInformations = new Dictionary<string, string>();
+            Parties = new Dictionary<string, Dictionary<string, string>>();
         }
-    }
-
-
-
-    /// <summary>
-    /// Store AdditionalInformations for Dataset Object
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    public class AdditionalInformations
-    {
-        public string Title { get; set; }
-
     }
 
 

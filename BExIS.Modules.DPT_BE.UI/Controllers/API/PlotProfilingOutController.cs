@@ -47,21 +47,21 @@ namespace BExIS.Modules.DPT_BE.UI.Controllers
             //get gp ref dataset 
             string gpRefDatasetId = settings.GetValueByKey("gpRefDataset").ToString();
             var datasetObjectGp = DataAccess.GetDatasetInfo(gpRefDatasetId, GetServerInformation());
-            DataTable gpPlotRefTable = DataAccess.GetData(gpRefDatasetId, long.Parse(datasetObjectGp.DataStructureId), GetServerInformation());
+            DataTable gpPlotRefTable = DataAccess.GetData(gpRefDatasetId, datasetObjectGp.DataStructureId, GetServerInformation());
 
             //get ep ref data set to find mips and vips
             string epRefDatasetId = settings.GetValueByKey("epRefDataset").ToString();
             var datasetObject = DataAccess.GetDatasetInfo(epRefDatasetId, GetServerInformation());
-            DataTable epPlotRefTable = DataAccess.GetData(epRefDatasetId, long.Parse(datasetObject.DataStructureId), GetServerInformation());
+            DataTable epPlotRefTable = DataAccess.GetData(epRefDatasetId, datasetObject.DataStructureId, GetServerInformation());
 
             //get new experiment plots datasets
             string foxRefDatasetId = settings.GetValueByKey("foxRefDataset").ToString();
             var datasetObjectFox = DataAccess.GetDatasetInfo(foxRefDatasetId, GetServerInformation());
-            DataTable foxPlotRefTable = DataAccess.GetData(foxRefDatasetId, long.Parse(datasetObjectFox.DataStructureId), GetServerInformation());
+            DataTable foxPlotRefTable = DataAccess.GetData(foxRefDatasetId, datasetObjectFox.DataStructureId, GetServerInformation());
 
             string gNewExpRefDatasetId = settings.GetValueByKey("gNewExpDataset").ToString();
             var datasetObjectgNewExp = DataAccess.GetDatasetInfo(gNewExpRefDatasetId, GetServerInformation());
-            DataTable gNewExpPlotRefTable = DataAccess.GetData(gNewExpRefDatasetId, long.Parse(datasetObjectgNewExp.DataStructureId), GetServerInformation());
+            DataTable gNewExpPlotRefTable = DataAccess.GetData(gNewExpRefDatasetId, datasetObjectgNewExp.DataStructureId, GetServerInformation());
 
             //
 
