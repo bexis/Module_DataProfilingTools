@@ -18,8 +18,8 @@
 						/>-->
 	<!-- Menubar -->
 		
-		<Export tag="menubar" id="luiMenu" order="2"
-		   title="Plot Profiling Tool" description="PlotProfiling" icon=""
+		<Export tag="menubar" id="luiMenu" order="7"
+		   title="Plot Count" description="PlotProfiling" icon=""
 		   controller="PlotProfiling" action=""
 		   extends="./menubarRoot/dataTools" />
 		
