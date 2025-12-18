@@ -49,8 +49,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@bexis2/bexis2-core-ui": "0.4.23",
-		"@bexis2/bexis2-rpm-ui": "^0.1.3",
+		"@bexis2/bexis2-core-ui": "0.4.60",
+		"@bexis2/bexis2-rpm-ui": "0.2.15",
 		"@floating-ui/dom": "^1.6.3",
 		"@fortawesome/free-solid-svg-icons": "^6.5.2",
 		"@sveltejs/adapter-static": "^3.0.1",
