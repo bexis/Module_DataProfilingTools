@@ -406,6 +406,7 @@
     <Content Include="DPT_BE.Settings.json" />
     <None Include="Properties\PublishProfiles\BexisServer_2030-testsite.pubxml" />
     <None Include="Properties\PublishProfiles\BexisServer_BE-Website.pubxml" />
+    <None Include="Properties\PublishProfiles\BexisServer_v4-ProdTestsite.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
